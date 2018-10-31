@@ -70,6 +70,16 @@ export const asyncRouter = [
         name: 'PerimissionDirective'
       }
     ]
+  }, {
+    path: '/document',
+    component: Layout,
+    redirect: '/document/index',
+    children: [{
+      path: 'index',
+      component: () => import('@/views/document/index'),
+      name: 'Document',
+      meta: {title: 'document', icon: 'document', noCache: true}
+    }]
   }
 ]; // always show on the root menu
 export default new Router({
